@@ -32,7 +32,4 @@ To clone the repository and edit it locally, follow these steps:
     node server.js
     ```
 
-
-
-Uploading evil-niche-recording.mov…
-
+https://github.com/user-attachments/assets/e6ecd768-8913-4f2f-a4e6-191c1b43840c
