@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EvilNiche</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+
+  <body style="background-color: rgb(33, 33, 33);">
+    <div class="m-4">
+      <h1>Evil Niche: Crime Simulation</h1>
+      <div class="card">
+        <div class="card-body">
+          <h2>Insert county arrest records below</h2>
+          <form action="mark" method="POST">
+            <div>
+              <label for="countyName">County Name:</label>
+              <select class="form-control" id="countyName" name="countyName">
+                <option value="Alachua">Alachua</option>
+                <option value="Baker">Baker</option>
+                <option value="Bay">Bay</option>
+                <option value="Bradford">Bradford</option>
+                <option value="Brevard">Brevard</option>
+                <option value="Broward">Broward</option>
+                <option value="Calhoun">Calhoun</option>
+                <option value="Charlotte">Charlotte</option>
+                <option value="Citrus">Citrus</option>
+                <option value="Clay">Clay</option>
+                <option value="Collier">Collier</option>
+                <option value="Columbia">Columbia</option>
+                <option value="DeSoto">DeSoto</option>
+                <option value="Dixie">Dixie</option>
+                <option value="Duval">Duval</option>
+                <option value="Escambia">Escambia</option>
+                <option value="Flagler">Flagler</option>
+                <option value="Franklin">Franklin</option>
+                <option value="Gadsden">Gadsden</option>
+                <option value="Gilchrist">Gilchrist</option>
+                <option value="Glades">Glades</option>
+                <option value="Gulf">Gulf</option>
+                <option value="Hamilton">Hamilton</option>
+                <option value="Hardee">Hardee</option>
+                <option value="Hendry">Hendry</option>
+                <option value="Hernando">Hernando</option>
+                <option value="Highlands">Highlands</option>
+                <option value="Hillsborough">Hillsborough</option>
+                <option value="Holmes">Holmes</option>
+                <option value="Indian River">Indian River</option>
+                <option value="Jackson">Jackson</option>
+                <option value="Jefferson">Jefferson</option>
+                <option value="Lafayette">Lafayette</option>
+                <option value="Lake">Lake</option>
+                <option value="Lee">Lee</option>
+                <option value="Leon">Leon</option>
+                <option value="Levy">Levy</option>
+                <option value="Liberty">Liberty</option>
+                <option value="Madison">Madison</option>
+                <option value="Manatee">Manatee</option>
+                <option value="Marion">Marion</option>
+                <option value="Martin">Martin</option>
+                <option value="Miami-Dade">Miami-Dade</option>
+                <option value="Monroe">Monroe</option>
+                <option value="Nassau">Nassau</option>
+                <option value="Okaloosa">Okaloosa</option>
+                <option value="Okeechobee">Okeechobee</option>
+                <option value="Orange">Orange</option>
+                <option value="Osceola">Osceola</option>
+                <option value="Palm Beach">Palm Beach</option>
+                <option value="Pasco">Pasco</option>
+                <option value="Pinellas">Pinellas</option>
+                <option value="Polk">Polk</option>
+                <option value="Putnam">Putnam</option>
+                <option value="Santa Rosa">Santa Rosa</option>
+                <option value="Sarasota">Sarasota</option>
+                <option value="Seminole">Seminole</option>
+                <option value="St. Johns">St. Johns</option>
+                <option value="St. Lucie">St. Lucie</option>
+                <option value="Sumter">Sumter</option>
+                <option value="Suwannee">Suwannee</option>
+                <option value="Taylor">Taylor</option>
+                <option value="Union">Union</option>
+                <option value="Volusia">Volusia</option>
+                <option value="Wakulla">Wakulla</option>
+                <option value="Walton">Walton</option>
+                <option value="Washington">Washington</option>
+              </select>
+            </div>
+            <div>
+              <label for="year">Year:</label>
+              <input class="form-control" type="number" id="year" name="year" required />
+            </div>
+            <div>
+              <label for="capitalMurder">Capital Murder:</label>
+              <input
+                class="form-control"
+                type="number"
+                id="capitalMurder"
+                name="capitalMurder"
+                required
+              />
+            </div>
+            <div>
+              <label for="violentCrimes">Violent Crimes:</label>
+              <input
+                class="form-control"
+                type="number"
+                id="violentCrimes"
+                name="violentCrimes"
+                required
+              />
+            </div>
+            <div>
+              <label for="crimesAgainstPersons">Crimes Against Persons:</label>
+              <input
+                class="form-control"
+                type="number"
+                id="crimesAgainstPersons"
+                name="crimesAgainstPersons"
+                required
+              />
+            </div>
+            <div>
+              <label for="crimesAgainstProperty"
+                >Crimes Against Property:</label
+              >
+              <input
+                class="form-control"
+                type="number"
+                id="crimesAgainstProperty"
+                name="crimesAgainstProperty"
+                required
+              />
+            </div>
+            <div>
+              <label for="drugOffenses">Drug Offenses:</label>
+              <input
+                class="form-control"
+                type="number"
+                id="drugOffenses"
+                name="drugOffenses"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary mt-3" style="width: 100%;">Submit</button>
+          </form>
+          <button
+            type="button"
+            class="btn btn-info mt-3"
+            id="loadDataBtn"
+            data-toggle="modal"
+            data-target="#viewDataModal"
+            style="width: 100%"
+          >
+            View Data
+          </button>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="viewDataModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="viewDataModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" style="max-width: 90%" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="viewDataModalLabel">Data Viewer</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    id="county-demographics-tab"
+                    data-toggle="tab"
+                    href="#countyDemographicsTable"
+                    role="tab"
+                    aria-controls="county-demographics"
+                    aria-selected="true"
+                    >County Demographics</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    id="police-tab"
+                    data-toggle="tab"
+                    href="#police"
+                    role="tab"
+                    aria-controls="police"
+                    aria-selected="false"
+                    >Police Info</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    id="arrests-tab"
+                    data-toggle="tab"
+                    href="#arrests"
+                    role="tab"
+                    aria-controls="arrests"
+                    aria-selected="false"
+                    >County Arrest Records</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    id="district-tab"
+                    data-toggle="tab"
+                    href="#district"
+                    role="tab"
+                    aria-controls="district"
+                    aria-selected="false"
+                    >District Government</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    id="circuit-tab"
+                    data-toggle="tab"
+                    href="#circuit"
+                    role="tab"
+                    aria-controls="circuit"
+                    aria-selected="false"
+                    >Circuit Judicial</a
+                  >
+                </li>
+              </ul>
+              <input
+                type="text"
+                id="searchInput"
+                class="form-control mb-2"
+                placeholder="Search..."
+              />
+              <div class="tab-content" id="myTabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="countyDemographicsTable"
+                  role="tabpanel"
+                  aria-labelledby="county-demographics-tab"
+                >
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th
+                            scope="col"
+                            onclick="sortAlphabetical(0, 'countyDemographicsContent')"
+                          >
+                            County Name <i class="fas fa-sort county-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortAlphabetical(1, 'countyDemographicsContent')"
+                          >
+                            District Name <i class="fas fa-sort county-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(2, 'countyDemographicsContent')"
+                          >
+                            Circuit ID <i class="fas fa-sort county-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(3, 'countyDemographicsContent')"
+                          >
+                            Population <i class="fas fa-sort county-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(4, 'countyDemographicsContent')"
+                          >
+                            Population Density <i class="fas fa-sort county-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(5, 'countyDemographicsContent')"
+                          >
+                            Median Income <i class="fas fa-sort county-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(6, 'countyDemographicsContent')"
+                          >
+                            Percent White <i class="fas fa-sort county-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(7, 'countyDemographicsContent')"
+                          >
+                            Poverty Rate <i class="fas fa-sort county-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(8, 'countyDemographicsContent')"
+                          >
+                            Literacy Score <i class="fas fa-sort county-sort"></i>
+                          </th>
+                          <th scope="col">
+                            Delete
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody id="countyDemographicsContent"></tbody>
+                    </table>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="district"
+                  role="tabpanel"
+                  aria-labelledby="district-tab"
+                >
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th
+                            scope="col"
+                            onclick="sortAlphabetical(0, 'districtGovContent')"
+                          >
+                            District Name <i class="fas fa-sort district-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortAlphabetical(1, 'districtGovContent')"
+                          >
+                            Current Party <i class="fas fa-sort district-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortAlphabetical(2, 'districtGovContent')"
+                          >
+                            Representative Name <i class="fas fa-sort district-sort"></i>
+                          </th>
+                          <th scope="col">
+                            Delete
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody id="districtGovContent"></tbody>
+                    </table>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="circuit"
+                  role="tabpanel"
+                  aria-labelledby="circuit-tab"
+                >
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(0, 'circuitJudicialContent')"
+                          >
+                            Circuit ID <i class="fas fa-sort circuit-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(1, 'circuitJudicialContent')"
+                          >
+                            Year <i class="fas fa-sort circuit-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(2, 'circuitJudicialContent')"
+                          >
+                            Filings <i class="fas fa-sort circuit-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(3, 'circuitJudicialContent')"
+                          >
+                            Charges <i class="fas fa-sort circuit-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(4, 'circuitJudicialContent')"
+                          >
+                            Acquittals <i class="fas fa-sort circuit-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(5, 'circuitJudicialContent')"
+                          >
+                            Pleas <i class="fas fa-sort circuit-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(6, 'circuitJudicialContent')"
+                          >
+                            Convictions <i class="fas fa-sort circuit-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(7, 'circuitJudicialContent')"
+                          >
+                            Jury Trial Rates <i class="fas fa-sort circuit-sort"></i>
+                          </th>
+                          <th scope="col">
+                            Delete
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody id="circuitJudicialContent"></tbody>
+                    </table>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="police"
+                  role="tabpanel"
+                  aria-labelledby="police-tab"
+                >
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(0, 'policeContent')"
+                          >
+                            Year <i class="fas fa-sort police-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortAlphabetical(1, 'policeContent')"
+                          >
+                            Agency Name <i class="fas fa-sort police-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortAlphabetical(2, 'policeContent')"
+                          >
+                            County Name <i class="fas fa-sort police-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(3, 'policeContent')"
+                          >
+                            Officers <i class="fas fa-sort police-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(4, 'policeContent')"
+                          >
+                            Officers Per 1000 <i class="fas fa-sort police-sort"></i>
+                          </th>
+                          <th scope="col">
+                            Delete
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody id="policeContent"></tbody>
+                    </table>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="arrests"
+                  role="tabpanel"
+                  aria-labelledby="arrests-tab"
+                >
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th
+                            scope="col"
+                            onclick="sortAlphabetical(0, 'arrestsContent')"
+                          >
+                            County Name <i class="fas fa-sort arrest-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(1, 'arrestsContent')"
+                          >
+                            Year <i class="fas fa-sort arrest-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(2, 'arrestsContent')"
+                          >
+                            Capital Murder <i class="fas fa-sort arrest-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(3, 'arrestsContent')"
+                          >
+                            Violent Crimes <i class="fas fa-sort arrest-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(4, 'arrestsContent')"
+                          >
+                            Crimes Against Persons <i class="fas fa-sort arrest-sort"></i>
+                          </th>
+                          <th
+                            scope="col"
+                            onclick="sortNumerical(5, 'arrestsContent')"
+                          >
+                            Crimes Against Property <i class="fas fa-sort arrest-sort"></i>
+                          </th>
+                          <th scope="col" onclick="sortNumerical(6)">
+                            Drug Offenses <i class="fas fa-sort arrest-sort"></i>
+                          </th>
+                          <th scope="col">
+                            Delete
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody id="arrestsContent"></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button id="improve-police-btn" style="background-color: green; width: 100%"" class="btn btn-primary mt-3">Improve Police</button>
+      <div class="crime-recommender" style="display: flex; justify-content: space-between; align-items: stretch;">
+        <div class="questionnaire" style="width: 66%;">
+          <form class="card p-3 mt-4" action="submit-form" method="post">
+            <h2 class="mt-2">Recommender</h2>
+            <div class="form-group">
+              <label for="crime">What kind of crime are you most willing to commit?</label>
+              <select class="form-control" name="crime" id="crime">
+                <option value="">Select your crime</option>
+                <option value="capital">Capital Murder</option>
+                <option value="violent">Violent Crime</option>
+                <option value="persons">Crime Against Persons</option>
+                <option value="property">Crime Against Property</option>
+                <option value="drug">Drug Offenses</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="party">What's your preferred political party?</label>
+              <select class="form-control" name="party" id="party">
+                <option value="">Select your party</option>
+                <option value="democrat">Democratic</option>
+                <option value="republican">Republican</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="area">What kind of area would you want to live (commit crime) in?</label>
+              <select class="form-control" name="area" id="area">
+                <option value="">Select your area</option>
+                <option value="urban">Urban (high population density)</option>
+                <option value="suburban">Suburban (medium population density)</option>
+                <option value="rural">Rural (low population density)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="police">Would you prefer to live (commit crime) in an area with low police presence?</label>
+              <select class="form-control" name="police" id="police">
+                <option value="">Select your choice</option>
+                <option value="low-police">Yes</option>
+                <option value="high-police">No (I have no preference)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="acquittal">Would you prefer to live (commit crime) in an area with a large acquittal to charge ratio?</label>
+              <select class="form-control" name="acquittal" id="acquittal">
+                <option value="">Select your choice</option>
+                <option value="high-rate">Yes</option>
+                <option value="low-rate">No (I have no preference)</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="response" style="width: 32%;">
+          <form class="card p-3 mt-4">
+            <div class="county-image-container" ></div>
+            <div id="county-stats" class="mt-2">
+              <!-- SVG image will be inserted here -->
+              <h4>Selected County: <%= results? results.countyName : 'Not available' %></h4>
+              <h5>County Stats:</h5>
+              <% if (results) { %>
+                <h6>- District Name: <%= results.districtName %></h6>
+                <h6>- Circuit ID: <%= results.circuitID %></h6>
+                <h6>- Population: <%= results.population %></h6>
+                <h6>- Population Density: <%= results.populationDensity %></h6>
+                <h6>- Median Income: <%= results.medianIncome %></h6>
+                <h6>- Percent White: <%= results.percentWhite %></h6>
+              <% } else { %>
+                <h4>- No data available</h4>
+              <% } %>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="map" style="width: 100%; height: 500px;"></div>
+
+    <script>
+      var sortingOrder = [];
+
+      function sortNumerical(columnIndex, content) {
+        var table, rows, switching, i, x, y, shouldSwitch, sortIcon;
+
+        table = document.getElementById(content);
+        switching = true;
+
+        if (sortingOrder[columnIndex]) {
+          sortingOrder[columnIndex] *= -1;
+        } else {
+          sortingOrder[columnIndex] = 1;
+        }
+
+        for (var j = 0; j < sortingOrder.length; j++) {
+          if (j !== columnIndex) {
+            sortingOrder[j] = undefined;
+          }
+        }
+
+        while (switching) {
+          switching = false;
+          rows = table.rows;
+
+          for (i = 0; i < rows.length - 1; i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName("td")[columnIndex];
+            y = rows[i + 1].getElementsByTagName("td")[columnIndex];
+
+            var xValue = parseFloat(x.innerHTML.trim()) || 0;
+            var yValue = parseFloat(y.innerHTML.trim()) || 0;
+
+            if (sortingOrder[columnIndex] === 1) {
+              if (xValue > yValue) {
+                shouldSwitch = true;
+                break;
+              }
+            } else {
+              if (xValue < yValue) {
+                shouldSwitch = true;
+                break;
+              }
+            }
+          }
+
+          if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+          }
+        }
+
+        switch (content) {
+          case "countyDemographicsContent":
+            sortIcon = document.querySelectorAll(".fa-sort.county-sort")[columnIndex];
+            break;
+          case "policeInfo":
+            sortIcon = document.querySelectorAll(".fa-sort.police-sort")[columnIndex];
+            break;
+          case "arrestsContent":
+            sortIcon = document.querySelectorAll(".fa-sort.arrest-sort")[columnIndex];
+            break;
+          case "districtGovContent":
+            sortIcon = document.querySelectorAll(".fa-sort.district-sort")[columnIndex];
+            break;
+          case "circuitJudicialContent":
+            sortIcon = document.querySelectorAll(".fa-sort.circuit-sort")[columnIndex];
+            break;
+          default:
+            break;
+        }
+
+        if (sortingOrder[columnIndex] === 1) {
+          sortIcon.classList.remove("fa-sort-up", "fa-sort-down");
+          sortIcon.classList.add("fa-sort-up");
+        } else {
+          sortIcon.classList.remove("fa-sort-up", "fa-sort-down");
+          sortIcon.classList.add("fa-sort-down");
+        }
+      }
+    </script>
+
+    <script>
+      var sortingOrder = [];
+
+      function hasNumber(strNumber) {
+        return /^\d+$/.test(strNumber);
+      }
+
+      function sortAlphabetical(columnIndex, content) {
+        var table, rows, switching, i, x, y, shouldSwitch, sortIcon;
+
+        table = document.getElementById(content);
+        switching = true;
+
+        if (sortingOrder[columnIndex]) {
+          sortingOrder[columnIndex] *= -1;
+        } else {
+          sortingOrder[columnIndex] = 1;
+        }
+
+        for (var j = 0; j < sortingOrder.length; j++) {
+          if (j !== columnIndex) {
+            sortingOrder[j] = undefined;
+          }
+        }
+
+        while (switching) {
+          switching = false;
+          rows = table.rows;
+
+          for (i = 0; i < rows.length - 1; i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName("td")[columnIndex];
+            y = rows[i + 1].getElementsByTagName("td")[columnIndex];
+
+            if (
+              x.innerHTML.substring(0, 1) === "D" &&
+              hasNumber(x.innerHTML.substring(1))
+            ) {
+              xValue = parseInt(x.innerHTML.substring(1));
+              yValue = parseInt(y.innerHTML.substring(1));
+              if (sortingOrder[columnIndex] === 1) {
+                if (xValue > yValue) {
+                  shouldSwitch = true;
+                  break;
+                }
+              } else {
+                if (xValue < yValue) {
+                  shouldSwitch = true;
+                  break;
+                }
+              }
+            } else {
+              if (sortingOrder[columnIndex] === 1) {
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                  shouldSwitch = true;
+                  break;
+                }
+              } else {
+                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                  shouldSwitch = true;
+                  break;
+                }
+              }
+            }
+          }
+
+          if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+          }
+        }
+
+        switch (content) {
+          case "countyDemographicsContent":
+            sortIcon = document.querySelectorAll(".fa-sort.county-sort")[columnIndex];
+            break;
+          case "policeInfo":
+            sortIcon = document.querySelectorAll(".fa-sort.police-sort")[columnIndex];
+            break;
+          case "arrestsContent":
+            sortIcon = document.querySelectorAll(".fa-sort.arrest-sort")[columnIndex];
+            break;
+          case "districtGovContent":
+            sortIcon = document.querySelectorAll(".fa-sort.district-sort")[columnIndex];
+            break;
+          case "circuitJudicialContent":
+            sortIcon = document.querySelectorAll(".fa-sort.circuit-sort")[columnIndex];
+            break;
+          default:
+            break;
+        }
+
+        if (sortingOrder[columnIndex] === 1) {
+          sortIcon.classList.remove("fa-sort-up", "fa-sort-down");
+          sortIcon.classList.add("fa-sort-up");
+        } else {
+          sortIcon.classList.remove("fa-sort-up", "fa-sort-down");
+          sortIcon.classList.add("fa-sort-down");
+        }
+      }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("searchInput");
+
+        function filterRows(searchText, content) {
+          const rows = content.querySelectorAll("tr");
+
+          rows.forEach(function (row) {
+            const columns = row.querySelectorAll("td");
+            let found = false;
+
+            columns.forEach(function (column) {
+              if (column.textContent.toLowerCase().includes(searchText)) {
+                found = true;
+              }
+            });
+
+            if (found) {
+              row.style.display = "";
+            } else {
+              row.style.display = "none";
+            }
+          });
+        }
+
+        searchInput.addEventListener("input", function () {
+          const searchText = this.value.toLowerCase();
+          const activeTab = document.querySelector(".nav-tabs .nav-link.active");
+          const tabId = activeTab.getAttribute("id");
+
+          switch (tabId) {
+            case "county-demographics-tab":
+              filterRows(searchText, document.getElementById("countyDemographicsContent"));
+              break;
+            case "police-tab":
+              filterRows(searchText, document.getElementById("policeContent"));
+              break;
+            case "arrests-tab":
+              filterRows(searchText, document.getElementById("arrestsContent"));
+              break;
+            case "district-tab":
+              filterRows(searchText, document.getElementById("districtGovContent"));
+              break;
+            case "circuit-tab":
+              filterRows(searchText, document.getElementById("circuitJudicialContent"));
+              break;
+            default:
+              break;
+          }
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $("#improve-police-btn").click(function () {
+          $.ajax({
+            url: "/api/attendance/improvePolice/",
+            type: "POST",
+            success: function (response) {
+              alert("Data modified successfully for entry ");
+              location.reload();
+            },
+            error: function () {
+              alert("Error modifying data for entry: ");
+            },
+          });
+
+        })
+      });
+
+      $(document).ready(function () {
+        $("#loadDataBtn").click(function () {
+          $.ajax({
+            url: "/api/precision",
+            method: "GET",
+            success: function (data) {
+              var rows = "";
+              data[0].countyDemographics.forEach(function (county, index) {
+                rows += `<tr>
+                        <th scope="row">${index + 1}</th>
+                        <td contenteditable="true" data-key='${county.countyName}' data-value='${county.countyName}' data-table='CountyDemographics' data-attr="countyName">${county.countyName}</td>
+                        <td contenteditable="true" data-key='${county.countyName}' data-value='${county.countyName}' data-table='CountyDemographics' data-attr="districtName">${county.districtName}</td>
+                        <td contenteditable="true" data-key='${county.countyName}' data-value='${county.countyName}' data-table='CountyDemographics' data-attr="circuitID">${parseInt(county.circuitID)}</td>
+                        <td contenteditable="true" data-key='${county.countyName}' data-value='${county.countyName}' data-table='CountyDemographics' data-attr="population">${parseInt(county.population)}</td>
+                        <td contenteditable="true" data-key='${county.countyName}' data-value='${county.countyName}' data-table='CountyDemographics' data-attr="populationDensity">${parseFloat(county.populationDensity).toFixed(2)}</td>
+                        <td contenteditable="true" data-key='${county.countyName}' data-value='${county.countyName}' data-table='CountyDemographics' data-attr="medianIncome">${parseFloat(county.medianIncome).toFixed(2)}</td>
+                        <td contenteditable="true" data-key='${county.countyName}' data-value='${county.countyName}' data-table='CountyDemographics' data-attr="percentWhite">${parseFloat(county.percentWhite).toFixed(2)}</td>
+                        <td contenteditable="true" data-key='${county.countyName}' data-value='${county.countyName}' data-table='CountyDemographics' data-attr="povertyRate">${parseFloat(county.povertyRate).toFixed(2)}</td>
+                        <td contenteditable="true" data-key='${county.countyName}' data-value='${county.countyName}' data-table='CountyDemographics' data-attr="literacyScore">${county.literacyScore}</td>
+                        <td>
+                          <button class="btn btn-danger btn-sm" data-key='${county.countyName}' data-value='${county.countyName}' data-table='CountyDemographics' data-attribute='countyName'>X</button>
+                        </td>
+                      </tr>`;
+              });
+              $("#countyDemographicsContent").html(rows);
+
+              var rows = "";
+              data[1].policeInfo.forEach(function (police, index) {
+                rows += `<tr>
+                        <th scope="row">${index + 1}</th>
+                        <td contenteditable="true" data-key='${police.agencyName}' data-value=${police.year} data-table='PoliceInfo' data-attr="year">${parseInt(police.year)}</td>
+                        <td contenteditable="true" data-key='${police.agencyName}' data-value=${police.year} data-table='PoliceInfo' data-attr="agencyName">${police.agencyName}</td>
+                        <td contenteditable="true" data-key='${police.agencyName}' data-value=${police.year} data-table='PoliceInfo' data-attr="countyName">${police.countyName}</td>
+                        <td contenteditable="true" data-key='${police.agencyName}' data-value=${police.year} data-table='PoliceInfo' data-attr="numOfficers">${parseInt(police.numOfficers)}</td>
+                        <td contenteditable="true" data-key='${police.agencyName}' data-value=${police.year} data-table='PoliceInfo' data-attr="numOfficersPer1000">${parseFloat(police.numOfficersPer1000).toFixed(2)}</td>
+                        <td>
+                          <button class="btn btn-danger btn-sm" data-key='${police.agencyName}' data-value=${police.year} data-table='PoliceInfo' data-attribute='agencyName'>X</button>
+                        </td>
+                      </tr>`;
+              });
+              $("#policeContent").html(rows);
+
+              var rows = "";
+              data[2].countyArrestRecords.forEach(function (record, index) {
+                rows += `<tr>
+                        <th scope="row">${record.recordID}</th>
+                        <td contenteditable="true" data-key=${record.recordID} data-value=${record.recordID} data-table='CountyArrestRecords' data-attr="countyName">${record.countyName}</td>
+                        <td contenteditable="true" data-key=${record.recordID} data-value=${record.recordID} data-table='CountyArrestRecords' data-attr="year">${parseInt(record.year)}</td>
+                        <td contenteditable="true" data-key=${record.recordID} data-value=${record.recordID} data-table='CountyArrestRecords' data-attr="capitalMurder">${parseInt(record.capitalMurder)}</td>
+                        <td contenteditable="true" data-key=${record.recordID} data-value=${record.recordID} data-table='CountyArrestRecords' data-attr="violentCrimes">${parseInt(record.violentCrimes)}</td>
+                        <td contenteditable="true" data-key=${record.recordID} data-value=${record.recordID} data-table='CountyArrestRecords' data-attr="crimesAgainstPersons">${parseInt(record.crimesAgainstPersons)}</td>
+                        <td contenteditable="true" data-key=${record.recordID} data-value=${record.recordID} data-table='CountyArrestRecords' data-attr="crimesAgainstProperty">${parseInt(record.crimesAgainstProperty)}</td>
+                        <td contenteditable="true" data-key=${record.recordID} data-value=${record.recordID} data-table='CountyArrestRecords' data-attr="drugOffenses">${parseInt(record.drugOffenses)}</td>
+                        <td>
+                          <button class="btn btn-danger btn-sm" data-key=${record.recordID} data-value=${record.recordID} data-table='CountyArrestRecords' data-attribute='recordID'>X</button>
+                        </td>
+                      </tr>`;
+              });
+              $("#arrestsContent").html(rows);
+
+              var rows = "";
+              data[3].circuitJudicial.forEach(function (circuit, index) {
+                rows += `<tr>
+                        <th scope="row">${circuit.recordID}</th>
+                        <td contenteditable="true" data-key=${circuit.recordID} data-value=${circuit.recordID} data-table='CircuitJudicial' data-attr="circuitID">${parseInt(circuit.circuitID)}</td>
+                        <td contenteditable="true" data-key=${circuit.recordID} data-value=${circuit.recordID} data-table='CircuitJudicial' data-attr="year">${parseInt(circuit.year)}</td>
+                        <td contenteditable="true" data-key=${circuit.recordID} data-value=${circuit.recordID} data-table='CircuitJudicial' data-attr="filings">${parseInt(circuit.filings)}</td>
+                        <td contenteditable="true" data-key=${circuit.recordID} data-value=${circuit.recordID} data-table='CircuitJudicial' data-attr="charges">${parseInt(circuit.charges)}</td>
+                        <td contenteditable="true" data-key=${circuit.recordID} data-value=${circuit.recordID} data-table='CircuitJudicial' data-attr="acquittals">${parseInt(circuit.acquittals)}</td>
+                        <td contenteditable="true" data-key=${circuit.recordID} data-value=${circuit.recordID} data-table='CircuitJudicial' data-attr="pleas">${parseInt(circuit.pleas)}</td>
+                        <td contenteditable="true" data-key=${circuit.recordID} data-value=${circuit.recordID} data-table='CircuitJudicial' data-attr="convictions">${parseInt(circuit.convictions)}</td>
+                        <td contenteditable="true" data-key=${circuit.recordID} data-value=${circuit.recordID} data-table='CircuitJudicial' data-attr="juryTrialRates">${parseFloat(circuit.juryTrialRates).toFixed(2)}</td>
+                        <td>
+                          <button class="btn btn-danger btn-sm" data-key=${circuit.recordID} data-value=${circuit.recordID} data-table='CircuitJudicial' data-attribute='recordID'>X</button>
+                        </td>
+                      </tr>`;
+              });
+              $("#circuitJudicialContent").html(rows);
+
+              var rows = "";
+              data[4].districtGovernment.forEach(function (district, index) {
+                rows += `<tr>
+                        <th scope="row">${index + 1}</th>
+                        <td contenteditable="true" data-key='${district.districtName}' data-value='${district.districtName}' data-table='DistrictGovernment' data-attr="districtName">${district.districtName}</td>
+                        <td contenteditable="true" data-key='${district.districtName}' data-value='${district.districtName}' data-table='DistrictGovernment' data-attr="currentParty">${district.currentParty}</td>
+                        <td contenteditable="true" data-key='${district.districtName}' data-value='${district.districtName}' data-table='DistrictGovernment' data-attr="representativeName">${district.representativeName}</td>
+                        <td>
+                          <button class="btn btn-danger btn-sm" data-key='${district.districtName}' data-value='${district.districtName}' data-table='DistrictGovernment' data-attribute='districtName'>X</button>
+                        </td>
+                      </tr>`;
+              });
+              $("#districtGovContent").html(rows);
+            },
+            error: function () {
+              alert("Failed to load data.");
+            },
+          });
+        });
+      });
+
+      $(document).on("click", ".btn-warning", function () {
+        var netId = $(this).data("netid");
+        $.ajax({
+          url: "/api/attendance/modify/" + netId,
+          type: "POST",
+          data: {
+            present: 0,
+          },
+          success: function (response) {
+            alert("Data modified successfully for entry " + netId);
+            location.reload();
+          },
+          error: function () {
+            alert("Error modifying data for entry: " + netId);
+          },
+        });
+      });
+
+      $(document).on("click", ".btn-danger", function () {
+        var key = $(this).data("key");
+        var value = $(this).data("value");
+        var table = $(this).data("table");
+        if (
+          confirm(
+            "Are you sure you want to delete entry: " +
+              value +
+              "?"
+          )
+        ) {
+          $.ajax({
+            url: "/api/attendance/delete/",
+            type: "DELETE",
+            data: { table: table, key: key, value: value },
+            success: function (response) {
+              alert("Data deleted successfully for Net ID: ");
+              location.reload();
+            },
+            error: function () {
+              alert("Error deleting entry: ");
+            },
+          });
+        }
+      });
+
+      $(document).on('input', 'td[contenteditable="true"]', function() {
+        const cell = $(this);
+        const newValue = cell.text();
+        const dataAttr = cell.data('attr');
+        const table = $(this).data("table");
+        const key = $(this).data("key")
+        const value = $(this).data("value");
+
+        $.ajax({
+          url: '/api/attendance/update', // Replace with your backend API endpoint
+          type: 'POST',
+          data: {
+            attribute: dataAttr,
+            newValue: newValue,
+            table: table,
+            key: key,
+            value: value
+          },
+          success: function(response) {
+            alert(`Data modified successfully for attribute ${dataAttr}`);
+          },
+          error: function() {
+            alert(`Error modifying data for attribute: ${dataAttr}`);
+          }
+        });
+      });
+
+    </script>
+
+    <script>
+      window.initGoogleMaps = function() {
+        let map;
+        let geocoder;
+        let dataLayer;
+      
+        map = new window.google.maps.Map(document.getElementById('map'), {
+          center: { lat: 25.7617, lng: -80.1918 },
+          zoom: 8
+        });
+
+        geocoder = new window.google.maps.Geocoder();
+        dataLayer = new window.google.maps.Data();
+      
+        const countyImageContainer = document.querySelector('.county-image-container');
+        const countyStatsPopup = document.getElementById('county-stats');
+      
+        // Function to load the SVG image based on countyName
+        function loadCountyImage(countyName) {
+          const apiUrl = `/api/image/${countyName}`;
+          const svgImage = document.createElement('img');
+          svgImage.src = apiUrl;
+          svgImage.alt = `${countyName} County Map`;
+          svgImage.addEventListener('mouseover', showCountyStats);
+          svgImage.addEventListener('mouseout', hideCountyStats);
+          countyImageContainer.appendChild(svgImage);
+        }
+      
+        // Function to show the county stats popup
+        function showCountyStats() {
+          countyStatsPopup.style.display = 'block';
+        }
+      
+        // Function to hide the county stats popup
+        function hideCountyStats() {
+          countyStatsPopup.style.display = 'none';
+        }
+      
+        function searchForCounty(countyName) {
+          console.log(countyName);
+          geocoder.geocode({ address: countyName }, (results, status) => {
+            if (status === 'OK') {
+              let latLng = results[0].geometry.location;
+              map.setCenter(latLng);
+              map.setZoom(10);
+
+              // Add a marker at the center location
+              const marker = new window.google.maps.Marker({
+                position: latLng,
+                map: map,
+              });
+            } else {
+              console.error('Geocode failed:', status);
+            }
+          });
+        }
+      
+        // Call the loadCountyImage function with the appropriate countyName
+        <% if (results) { %>
+          loadCountyImage('<%= results.countyName %>');
+          searchForCounty('<%= results.countyName %>');
+        <% } %>
+      };
+    </script>
+      
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= googleMapsApiKey %>&callback=initGoogleMaps"></script>
+  </body>
+
+  <style>
+    h1 {color: red}
+    .card {background-color: rgb(64, 64, 64);}
+    h2 {color: red}
+    h3 {color: red}
+    h4 {color: red}
+    h5 {color: white}
+    h6 {color: white}
+    label {color: white}
+    input {background-color: lightgray !important}
+    select {background: lightgray !important}
+    #searchInput {background: white !important}
+  </style>
+</html>

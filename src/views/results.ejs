@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selected County Stats</title>
+</head>
+<body>
+    <div class="response" style="width: 49%;">
+        <form class="card p-3 mt-4">
+            <h2>Selected County: <%= data.countyName %></h2>
+            <h3>County Stats:</h3>
+            <h4>- District Name: <%= data.districtName %></h4>
+            <h4>- Circuit ID: <%= data.circuitID %></h4>
+            <h4>- Population: <%= data.population %></h4>
+            <h4>- Population Density: <%= data.populationDensity %></h4>
+            <h4>- Median Income: <%= data.medianIncome %></h4>
+            <h4>- Percent White: <%= data.percentWhite %></h4>
+        </form>
+    </div>
+</body>
+</html>
